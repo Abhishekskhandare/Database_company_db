@@ -70,6 +70,7 @@
     <Build Include="dbo\Tables\Employee_Projects.sql" />
     <Build Include="Security\admin.sql" />
     <Build Include="Security\admin_1.sql" />
+    <Build Include="Questions\insertDataScript.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Questions\questions.txt" />

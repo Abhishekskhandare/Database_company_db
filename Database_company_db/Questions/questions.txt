@@ -1,0 +1,323 @@
+I have organized all 300 questions below, categorized by difficulty and technical focus, specifically tailored to the schema and data provided.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+## **SQL Practice: 300 Interview Questions**
+===========================================================================
+### **Part 1: Basic Retrieval & Filtering (1-60)**
+
+1. Select all columns from the `Employees` table.
+2. List all unique department names.
+3. Find employees with a salary greater than 100,000.
+4. List all employees hired after 2020-01-01.
+5. Find projects with a budget exceeding 200,000.
+6. List employees whose last name starts with 'S'.
+7. Find departments located in 'New York'.
+8. Retrieve the first name and email of the 5 most recently hired employees.
+9. List all projects that do not have an `end_date` (ongoing projects).
+10. Find employees who earn exactly 85,000 or 95,000.
+11. List employees whose email contains the domain '@company.com'.
+12. Find projects that started before 2023.
+13. Sort employees by `last_name` alphabetically.
+14. Find employees who do not have a `manager_id`.
+15. List the top 3 highest-paid employees.
+16. Find employees hired in the month of May.
+17. Get the name of the project with the lowest budget.
+18. List employees whose first name is exactly 5 characters long.
+19. Find all employees who are in `dept_id` 2 or 3.
+20. Retrieve all columns for the project named 'Cloud Migration'.
+21. Find employees whose `last_name` has 'n' as the last letter.
+22. List projects starting in the year 2024.
+23. Find employees hired on a Monday.
+24. List unique `manager_id`s from the `Employees` table.
+25. Find employees with salaries that are multiples of 5000.
+26. Get all details for employees hired between 2016 and 2019.
+27. Find projects where the name includes the word 'Alpha'.
+28. List employees whose email does NOT contain 'johnson'.
+29. Sort departments by location in descending order.
+30. Find projects with a budget greater than 400,000.
+31. Select the top 10% of highest-paid employees.
+32. Find employees whose first name and last name start with the same letter.
+33. List projects starting in June.
+34. Find employees with a null `email`.
+35. Find employees hired in the last 1000 days.
+36. Show the first 3 employees skipping the first 1.
+37. Find projects that last longer than 6 months.
+38. List employees in `dept_id` 2 with a salary over 70,000.
+39. Find the `dept_id` of the 'Sales' department.
+40. List all projects sorted by their budget.
+41. Find employees with 'er' in their last name.
+42. Select all employees who report to manager 101.
+43. Find projects starting after '2024-01-01'.
+44. List employees with salary between 60,000 and 90,000.
+45. Find the total number of days 'Alpha App Redesign' is active.
+46. List employees with `emp_id` between 105 and 110.
+47. Find projects with budgets exactly equal to 500,000.
+48. Retrieve names of employees who report to `manager_id` 102.
+49. Find employees hired in the year 2024.
+50. List all departments except 'Executive'.
+51. Find employees whose hire_date is after 2022-01-01.
+52. List projects with budgets greater than 100,000.
+53. Select all employees whose `emp_id` is an even number.
+54. Find projects ending in the month of December.
+55. List employees with last names starting with 'P'.
+56. Find employees whose salary is not 150,000.
+57. List projects that start on the first day of the year.
+58. Find employees whose email length is less than 15.
+59. List employees whose first name contains the letter 'a'.
+60. Find projects with 'HR' in the title.
+
+---
+
+### **Part 2: Joins & Aggregations (61-150)**
+
+61. Show each employee's first name and their department name.
+62. Find the total number of employees in each department.
+63. List all projects and the count of employees assigned to each.
+64. Find the average salary per department.
+65. Show all employees and the name of their manager.
+66. List departments with more than 2 employees.
+67. Find the total hours worked on each project.
+68. Find the highest salary in the 'Engineering' department.
+69. List employees who are not assigned to any project.
+70. Find the department with the highest average salary.
+71. Show the total budget of projects per year.
+72. List employees working on more than 1 project.
+73. Find the department located in 'San Francisco'.
+74. Show the total salary paid by each department.
+75. Find employees working on the 'Cloud Migration' project.
+76. List projects and the names of employees assigned to them.
+77. Find managers who manage more than 2 employees.
+78. Calculate the total hours worked by each employee across all projects.
+79. List departments that have no employees.
+80. Find the average project budget.
+81. Show the first name of the manager for employee 'Diana Prince'.
+82. List projects that have employees from 'Engineering'.
+83. Find the employee who has worked the most hours on a single project.
+84. Show the department name and the total budget of its projects.
+85. Find the maximum salary for each manager's team.
+86. List employees who share the same manager.
+87. Find projects that have at least 3 employees.
+88. Calculate the total company salary expenditure.
+89. Show all projects that started in 2023.
+90. Find the average salary of employees who report to manager 101.
+91. List employees and their projects (use Left Join).
+92. Find the total budget for projects assigned to employee 104.
+93. Show the department name and the employee with the lowest salary in it.
+94. List employees who have worked more than 300 hours on any project.
+95. Find the average hours worked in the 'Executive' department.
+96. Count how many projects each department is involved in.
+97. List employees and their department's location.
+98. Find the department with the lowest total hours worked.
+99. Show the names of employees who worked on 'Cloud Migration'.
+100. Find the project with the highest hours logged.
+101. List employees hired after their managers (compare hire_dates).
+102. Find the total salary of all employees reporting to 'Bob Smith'.
+103. List projects where all assigned employees earn > 60,000.
+104. Show the month with the highest total salary spend.
+105. Find employees whose salary is above the company average.
+106. List departments that have employees hired in 2024.
+107. Find the total budget of projects that have Diana Prince on them.
+108. Show the count of projects starting each year.
+109. List employees and the number of days they have been with the company.
+110. Find the average salary of employees on the 'Beta' project.
+111. Show the manager with the largest team.
+112. List projects that share the same start date.
+113. Find the department with the widest salary range.
+114. List employees who work on projects with a budget over 300,000.
+115. Find the total number of employees reporting to each manager.
+116. Show the project name and the earliest hire date of its employees.
+117. List employees who have worked more than 100 hours.
+118. Find the department with the most employees.
+119. Show the total salary cost for the 'Sales' department.
+120. List employees and the name of the project they worked on.
+121. Find the average hours worked by `dept_id`.
+122. List managers hired before 2017.
+123. Show project names and the total salary of employees assigned to them.
+124. Find the most recently hired employee in each department.
+125. List departments where the total salary is over 200,000.
+126. Find projects that have an even number of employees.
+127. Show the employee name, project name, and hours.
+128. Find the manager of the manager for employee 104.
+129. List employees who joined the company in 2024.
+130. Find the total hours worked per department.
+131. Show the department with the most projects.
+132. List employees who have never worked on 'HR Portal'.
+133. Find the average tenure per department.
+134. Show the project with the most hours worked.
+135. List employees and their manager's email.
+136. Find departments where every employee earns more than 60k.
+137. Show the count of employees per project.
+138. Find the project that ended in 2023.
+139. List employees who work in 'New York'.
+140. Find the total number of projects managed by Bob.
+141. Show the employee who has been on the most projects.
+142. Find the average budget for projects with more than 2 employees.
+143. List employees whose salary is within 50k of the CEO's salary.
+144. Show the department with the highest "hours per employee" ratio.
+145. Find the project with the highest total salary cost.
+146. List employees who share a hire year.
+147. Find the total hours worked by employees hired in 2020.
+148. Show the department name and the earliest hire date.
+149. List employees who work on projects that are ongoing.
+150. Find the manager who oversees the most total budget.
+
+---
+
+### **Part 3: Advanced Logic & Analytics (151-250)**
+
+151. Find employees who earn more than the average salary of their department.
+152. Rank employees by salary within their department.
+153. Find the second highest salary in the company.
+154. List employees who earn more than their direct manager.
+155. Find the top 2 highest-paid employees in each department.
+156. Use a CTE to calculate the total budget per department.
+157. Calculate the difference between an employee’s salary and the company average.
+158. Show the "Salary Grade" (High/Medium/Low) for each employee.
+159. Find the cumulative sum of salaries ordered by hire date.
+160. Identify employees who are in the top 25% of earners.
+161. Use `LEAD` to find the next hired employee's name.
+162. Find departments where the total salary is higher than the average department total.
+163. Use `LAG` to compare an employee's salary to the previously hired employee.
+164. Find projects that have a budget higher than the 'Cloud Migration' project.
+165. Calculate a running total of hours worked on project 501.
+166. Rank departments by the number of projects.
+167. Label projects as 'Expensive' or 'Cheap' based on 200k threshold.
+168. Find employees who work on more projects than the average.
+169. List the employee with the median salary (conceptual or using functions).
+170. Find the 3rd highest salary in the company.
+171. Use a CTE to find employees who worked more than 200 hours.
+172. Identify departments with no employees earning less than 70k.
+173. Calculate the percentage of the project budget spent on hours (at $50/hr).
+174. Write a query to find duplicate emails if they existed.
+175. Find the month with the highest hiring volume.
+176. Identify the manager whose team has the highest average salary.
+177. Divide employees into 3 salary groups using `NTILE`.
+178. Find employees who have worked on projects with overlapping dates.
+179. Calculate the moving average of salaries.
+180. Find the employee who has worked the most total hours.
+181. Show the project name and the seniority of its team (avg hire date).
+182. Find the department where the salary range is largest.
+183. Use `EXISTS` to find departments with projects over 100k.
+184. Find employees who report to a manager in a different department.
+185. Show the total hours worked per employee as a % of project total.
+186. Find projects where the total salary of employees assigned > budget.
+187. Use a recursive CTE to find the org hierarchy for Diana.
+188. Rank projects by budget.
+189. Find employees hired in the same year as their manager.
+190. Use `COALESCE` to show 'No Manager' for Alice.
+191. Find the department with the most employees in the top 3 salaries.
+192. Calculate average hours per project by department.
+193. Find the most common hiring month.
+194. Show project budget as % of total company budget.
+195. Identify employees working on more than 2 projects.
+196. Find the manager with the most total hours in their team.
+197. Use `UNION` to list all names from Employees and Departments.
+198. Find employees who earn exactly the same as another employee.
+199. Show names and a count of how many people share that first name.
+200. Find the project with the most diverse department representation.
+201. Apply a 10% bonus to everyone in 'Engineering' (display only).
+202. Find the department with most hires in the last 5 years.
+203. Calculate the salary variance per department.
+204. Find employees in the bottom 50% of salary but top 50% of hours.
+205. Identify the "bottleneck" employee (on the most projects).
+206. Find projects starting within 30 days of each other.
+207. Show the employee with the 2nd highest hours on project 501.
+208. Find departments with only 1 manager.
+209. Show all employee-project combinations using CROSS JOIN.
+210. Find the average salary of the top 5 earners.
+211. Identify projects that finished in under 6 months.
+212. Find the manager with the longest-tenured team.
+213. Use `NULLIF` to handle cases where budget might be 0.
+214. Find the employee hired exactly on '2015-03-12'.
+215. Show count of employees in 50k salary buckets.
+216. Find projects with no employees from 'Sales'.
+217. Identify the employee who has worked with the most unique managers.
+218. Rank employees by project count.
+219. Find the month with the lowest total project budget.
+220. Find "Power Users" (hours > 300).
+221. Find the department where salary is increasing by hire date.
+222. Identify the project with most 'Sales' hours.
+223. Show the hire date of the top earner in 'Engineering'.
+224. Find the manager with the highest team budget.
+225. Total hours worked by people named 'Alice'.
+226. Find the project with the highest average salary.
+227. Employees who never worked with their direct manager.
+228. Dept name and total budget of top 2 projects.
+229. Find the employee with the most reports.
+230. Rank months by hiring.
+231. Projects longer than avg duration.
+232. % of employees with a manager.
+233. Dept with most weekend hires (if applicable).
+234. High salary/low hours employee.
+235. List all projects for Bob as a string.
+236. Total salary of employees with no projects.
+237. Project with most 'HR' employees.
+238. Salary diff between #1 and #2 earners.
+239. Manager with employees in most locations.
+240. Cast budget to integer.
+241. Latest project end date.
+242. Dept avg salary closest to company avg.
+243. Employees on projects in 2023 and 2024.
+244. Variance in hours on project 504.
+245. Manager with highest total hours.
+246. Employees hired in 2023.
+247. Dept with highest manager:employee ratio.
+248. Projects with most 100k+ earners.
+249. Longest employee name.
+250. Total salary + 15% raise.
+
+---
+
+### **Part 4: Database Design & Expert Scenarios (251-300)**
+
+251. Find and list duplicate emails.
+252. Create a view for `Dept_Stats`.
+253. Update salaries for 'Sales' by 5%.
+254. Delete projects from before 2020.
+255. Insert a new project correctly.
+256. Find missing IDs in `emp_id` sequence.
+257. Create an index on `salary`.
+258. Write a transaction to move Bob to Dept 3.
+259. Hours worked per month in 2023.
+260. Find orphaned project assignments.
+261. Find "Most Valuable Dept" (hours * salary).
+262. Handle NULL end dates as '2099-12-31'.
+263. Manager with subordinates avg hire date.
+264. List all emails separated by semicolon.
+265. Projects within 10% of budget.
+266. Median salary in the company.
+267. Top 1 project by budget per location.
+268. Hires on company anniversaries.
+269. Most manager hours on a project.
+270. Total hours for reports of Alice.
+271. Dept with most assignments recently.
+272. Swap dept_id of 105 and 106.
+273. Projects with only 1 employee.
+274. Salary of top earner who isn't a manager.
+275. Most hours/lowest salary employee.
+276. Dept with most 'Senior' employees.
+277. Largest budget increase (logic).
+278. Employee name and grand-manager name.
+279. % projects on time vs late.
+280. Employee with most unique projects.
+281. Dept with highest salary/hour.
+282. Project with most 'Finance' employees.
+283. Employee with most connections.
+284. Salary by quarter.
+285. % budget spent on staff.
+286. Manager with most 80k+ reports.
+287. Dept with best retention.
+288. Projects with same hours.
+289. Employee rank by hire date.
+290. Hours in project week 1.
+291. Dept with lowest avg project budget.
+292. Top N employees per project.
+293. Salary as % of manager salary.
+294. Employees hired in project start year.
+295. Manager with largest department.
+296. Hours for 100k+ earners.
+297. Dept with most people on 'Cloud Migration'.
+298. Most expensive project per location.
+299. Salary rank in whole company.
+300. Final total of all hours logged.

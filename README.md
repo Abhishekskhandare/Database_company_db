@@ -1,0 +1,96 @@
+CREATE DATABASE Database_company_db;
+USE Database_company_db;
+GO
+-- 1. Departments Table
+CREATE TABLE Departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50) NOT NULL,
+    location VARCHAR(50)
+);
+GO
+-- 2. Employees Table (with Self-Referencing Foreign Key)
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    hire_date DATE,
+    salary DECIMAL(10, 2),
+    manager_id INT,
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id),
+    FOREIGN KEY (manager_id) REFERENCES Employees(emp_id)
+);
+GO
+-- 3. Projects Table
+CREATE TABLE Projects (
+    project_id INT PRIMARY KEY,
+    project_name VARCHAR(100),
+    budget DECIMAL(15, 2),
+    start_date DATE,
+    end_date DATE
+);
+GO
+-- 4. Employee_Projects (Junction Table for Many-to-Many)
+CREATE TABLE Employee_Projects (
+    emp_id INT,
+    project_id INT,
+    hours_worked INT,
+    PRIMARY KEY (emp_id, project_id),
+    FOREIGN KEY (emp_id) REFERENCES Employees(emp_id),
+    FOREIGN KEY (project_id) REFERENCES Projects(project_id)
+);
+GO
+
+----data
+
+USE Database_company_db;
+GO
+-- 1. Insert Departments
+INSERT INTO Departments (dept_id, dept_name, location) VALUES
+(1, 'Executive', 'New York'),
+(2, 'Engineering', 'San Francisco'),
+(3, 'Sales', 'Chicago'),
+(4, 'Marketing', 'London'),
+(5, 'Human Resources', 'New York'),
+(6, 'Finance', 'Chicago');
+GO
+-- 2. Insert Employees (CEO first, then managers, then staff)
+INSERT INTO Employees (emp_id, first_name, last_name, email, hire_date, salary, manager_id, dept_id) VALUES
+(101, 'Alice', 'Johnson', 'alice.j@company.com', '2015-03-12', 250000, NULL, 1), -- CEO
+(102, 'Bob', 'Smith', 'bob.s@company.com', '2016-05-20', 180000, 101, 2),        -- Eng Manager
+(103, 'Charlie', 'Davis', 'charlie.d@company.com', '2017-01-15', 150000, 101, 3), -- Sales Manager
+(104, 'Diana', 'Prince', 'diana.p@company.com', '2018-09-10', 95000, 102, 2),    -- Senior Eng
+(105, 'Edward', 'Norton', 'edward.n@company.com', '2019-11-05', 85000, 102, 2),   -- Eng
+(106, 'Fiona', 'Gallagher', 'fiona.g@company.com', '2020-02-22', 72000, 103, 3), -- Sales Rep
+(107, 'George', 'Miller', 'george.m@company.com', '2021-06-30', 65000, 103, 3),  -- Sales Rep
+(108, 'Hannah', 'Abbott', 'hannah.a@company.com', '2022-08-14', 60000, 101, 5),  -- HR Lead
+(109, 'Ian', 'Wright', 'ian.w@company.com', '2023-01-10', 55000, 108, 5),        -- HR Assistant
+(110, 'Jane', 'Doe', 'jane.doe@company.com', '2024-03-01', 110000, 102, 2);      -- New High-Paid Eng
+GO
+-- 3. Insert Projects
+INSERT INTO Projects (project_id, project_name, budget, start_date, end_date) VALUES
+(501, 'Cloud Migration', 500000, '2023-01-01', '2023-12-31'),
+(502, 'Alpha App Redesign', 150000, '2024-02-01', '2024-11-30'),
+(503, 'Beta Data Warehouse', 800000, '2022-06-15', '2025-06-15'),
+(504, 'Global Sales Push', 200000, '2024-01-10', NULL), -- Ongoing
+(505, 'Internal HR Portal', 50000, '2023-05-01', '2023-08-01');
+GO
+-- 4. Insert Employee_Projects (Assignments and Hours)
+INSERT INTO Employee_Projects (emp_id, project_id, hours_worked) VALUES
+(102, 501, 120), -- Bob on Cloud
+(104, 501, 400), -- Diana on Cloud
+(105, 501, 350), -- Edward on Cloud
+(104, 502, 150), -- Diana on Alpha
+(110, 502, 200), -- Jane on Alpha
+(102, 503, 80),  -- Bob on Beta
+(104, 503, 500), -- Diana on Beta
+(106, 504, 600), -- Fiona on Sales Push
+(107, 504, 550), -- George on Sales Push
+(103, 504, 100), -- Charlie on Sales Push
+(108, 505, 40),  -- Hannah on HR Portal
+(109, 505, 180); -- Ian on HR Portal
+GO
+
+
+

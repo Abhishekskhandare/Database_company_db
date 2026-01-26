@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Database_company_db.sqlproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

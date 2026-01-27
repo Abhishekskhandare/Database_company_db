@@ -73,6 +73,7 @@
     <Build Include="Security\admin_1.sql" />
     <Build Include="Questions\insertDataScript.txt" />
     <Build Include="Files\answers_part_1.sql" />
+    <Build Include="Files\answers_part_2.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Questions\questions.txt" />
